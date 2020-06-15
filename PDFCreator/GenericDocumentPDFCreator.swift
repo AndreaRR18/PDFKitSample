@@ -1,15 +1,15 @@
 import UIKit
 import PDFKit
 
-class GenericDocumentPDFCreator: NSObject {
+public class GenericDocumentPDFCreator: NSObject {
     
     let images: [UIImage]
     
-    init(images: [UIImage]) {
+    public init(images: [UIImage]) {
         self.images = images
     }
     
-    func createPDF() -> Data {
+    public func createPDF() -> Data {
         
         let format = UIGraphicsPDFRendererFormat()
         
@@ -56,14 +56,14 @@ class GenericDocumentPDFCreator: NSObject {
         return imageRect.origin.y + imageRect.size.height
     }
     
-    func generagePDF() -> Data? {
-        let pdfDocument = PDFDocument()
-        for index in 0..<images.count {
-            PDFPage(image: images[index])
-                .map {
-                    pdfDocument.insert($0, at: index)
-            }
-        }
-        return pdfDocument.dataRepresentation()
-    }
+//    func generagePDF() -> Data? {
+//        let pdfDocument = PDFDocument()
+//        for index in 0..<images.count {
+//            PDFPage(image: images[index])
+//                .map {
+//                    pdfDocument.insert($0, at: index)
+//            }
+//        }
+//        return pdfDocument.dataRepresentation()
+//    }
 }

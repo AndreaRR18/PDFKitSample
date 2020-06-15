@@ -1,17 +1,17 @@
 import UIKit
 import PDFKit
 
-class IdentityCardPDFCreator: NSObject {
+public class IdentityCardPDFCreator: NSObject {
     
     let frontImage: UIImage
     let rearImage: UIImage
     
-    init(frontImage: UIImage, rearImage: UIImage) {
+    public init(frontImage: UIImage, rearImage: UIImage) {
         self.frontImage = frontImage
         self.rearImage = rearImage
     }
     
-    func createPDF() -> Data {
+    public func createPDF() -> Data {
         
         let format = UIGraphicsPDFRendererFormat()
         
